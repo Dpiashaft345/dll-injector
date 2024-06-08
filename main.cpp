@@ -96,10 +96,8 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
         SetTextColor(hdc, RGB(255, 255, 255));
         SetBkColor(hdc, RGB(25, 25, 25));
             return (LRESULT)GetStockObject(NULL_BRUSH);
-
     }
     break;
-
     case WM_COMMAND:
 
         switch (wParam)
@@ -119,8 +117,6 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                     if (hProcess == NULL)
                     {
                         MessageBox(hwnd, "Cannot open process!", "Cannot open process!", MB_ICONERROR);
-
-
                     }
                     else
                      {
@@ -133,25 +129,16 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                         CloseHandle(hProcess);
                         Sleep(10000);
                         exit(0);
-
                     }
-
-
                 }
-
 
             break;
         }
 
-
-
-
      break;
-
 
        case WM_CREATE:
            Controlls(hwnd);
-
            break;
 
     case WM_DESTROY:
@@ -160,10 +147,8 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
     default:                      /* for messages that we don't deal with */
         return DefWindowProc(hwnd, message, wParam, lParam);
     }
-
     return 0;
 }
-
 
 void Controlls(HWND hwnd)
 {
